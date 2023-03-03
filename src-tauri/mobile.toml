@@ -1,0 +1,5 @@
+[app]
+name = "streams"
+stylized-name = "Streams"
+domain = "streams.aicacia.com"
+template-pack = "wry"

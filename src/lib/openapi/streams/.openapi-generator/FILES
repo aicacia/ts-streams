@@ -1,0 +1,14 @@
+.openapi-generator-ignore
+apis/CamerasApi.ts
+apis/LiveApi.ts
+apis/PlaybackApi.ts
+apis/index.ts
+index.ts
+models/ModelsAnswerST.ts
+models/ModelsCameraST.ts
+models/ModelsOfferBodyST.ts
+models/ModelsResponseErrorST.ts
+models/ServicesCameraCreateST.ts
+models/ServicesCameraUpdateST.ts
+models/index.ts
+runtime.ts
