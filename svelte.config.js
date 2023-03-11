@@ -11,16 +11,7 @@ const config = {
 			fallback: 'index.html',
 			precompress: true
 		}),
-		appDir: 'internal',
-		csp: {
-			mode: 'hash',
-			directives: {
-				'default-src': ['self', 'http://localhost:*', 'https://*.openstreetmap.org'],
-				'img-src': ['self', 'data:', 'https://*.openstreetmap.org'],
-				'font-src': ['self', 'blob:', 'data:'],
-				'style-src': ['self', 'unsafe-inline']
-			}
-		}
+		appDir: 'internal'
 	}
 };
 

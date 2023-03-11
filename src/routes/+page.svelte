@@ -1,8 +1,8 @@
 <svelte:options immutable />
 
 <script lang="ts">
-	import Layout from '$lib/components/Layout.svelte';
-	import Stream from '$lib/components/Stream.svelte';
+	import BaseLayout from '$lib/components/BaseLayout.svelte';
+	import Live from '$lib/components/Live.svelte';
 	import type { ModelsCameraST } from '$lib/openapi/streams';
 	import { camerasApi } from '$lib/streams';
 	import { onMount } from 'svelte';
@@ -14,12 +14,6 @@
 	});
 </script>
 
-<Layout>
-	<div class="flex flex-row">
-		{#each cameras as camera (camera.id)}
-			<div class="flex flex-grow">
-				<Stream cameraId={camera.id} />
-			</div>
-		{/each}
-	</div>
-</Layout>
+<BaseLayout>
+	<Live {cameras} />
+</BaseLayout>

@@ -1,15 +1,9 @@
 <svelte:options immutable />
 
 <script lang="ts">
-	import Notifications from './Notifications.svelte';
+	import BaseLayout from './BaseLayout.svelte';
 </script>
 
-<div class="relative flex w-full h-full">
-	<div class="flex flex-col w-full h-full">
-		<div class="flex flex-col w-full h-full overflow-hidden">
-			<slot />
-		</div>
-	</div>
-</div>
-
-<Notifications />
+<BaseLayout>
+	<div class="container mx-auto h-full overflow-hidden"><slot /></div>
+</BaseLayout>
