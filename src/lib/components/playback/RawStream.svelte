@@ -10,12 +10,13 @@
 	export let element: HTMLVideoElement | undefined = undefined;
 	export let stream: WebRTCStream | undefined = undefined;
 	export let iceServers: string[] = [];
+	export let muted = true;
 
 	$: if (browser && element) {
 		if (stream) {
 			stream.close();
 		}
-		stream = createStream(element, iceServers, postSdp, getCodecs);
+		stream = createStream(element, iceServers, postSdp, getCodecs, muted);
 	}
 
 	onDestroy(() => {

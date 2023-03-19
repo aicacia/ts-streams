@@ -5,6 +5,7 @@
 	import RawStream from './RawStream.svelte';
 
 	export let cameraId: string;
+	export let muted = true;
 
 	$: getCodecs = () => camerasApi.camerasCameraIdLiveCodecsGet({ cameraId });
 	$: postSdp = (sdp: string) =>
@@ -13,4 +14,4 @@
 			.then((answer) => answer.answer_base64 as string);
 </script>
 
-<RawStream {postSdp} {getCodecs} />
+<RawStream {postSdp} {getCodecs} {muted} />

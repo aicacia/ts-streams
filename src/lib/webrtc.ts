@@ -9,7 +9,8 @@ export function createStream(
 	videoElement: HTMLVideoElement,
 	iceServers: string[],
 	getSdp: (offer: string) => Promise<string>,
-	getCodecs: () => Promise<string[]>
+	getCodecs: () => Promise<string[]>,
+	muted = true
 ) {
 	const emitter = new EventEmitter<{
 		stop(): void;
@@ -72,7 +73,7 @@ export function createStream(
 		mediaStream = new MediaStream();
 		videoElement.playsInline = true;
 		videoElement.autoplay = true;
-		videoElement.muted = true;
+		videoElement.muted = muted;
 		videoElement.srcObject = mediaStream;
 		pc.addEventListener('negotiationneeded', async function () {
 			const offer = await this.createOffer();

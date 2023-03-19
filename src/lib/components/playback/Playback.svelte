@@ -5,7 +5,8 @@
 	import RawPlaybackStream from './RawPlaybackStream.svelte';
 
 	export let cameraIds: string[] = [];
-	export let start: Date = new Date('2023-03-11T12:44:00.000Z');
+	export let start: Date = new Date('2023-03-19T15:41:00.000Z');
+	export let muted = false;
 
 	let playbackIds: string[] = [];
 	$: Promise.all(
@@ -19,6 +20,6 @@
 
 <div>
 	{#each playbackIds as playbackId (playbackId)}
-		<RawPlaybackStream {playbackId} />
+		<RawPlaybackStream {playbackId} {muted} />
 	{/each}
 </div>
