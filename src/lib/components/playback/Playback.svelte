@@ -5,7 +5,7 @@
 	import RawPlaybackStream from './RawPlaybackStream.svelte';
 
 	export let cameraIds: string[] = [];
-	export let start: Date = new Date('2023-03-19T15:41:00.000Z');
+	export let start: Date = new Date('2023-03-24T10:40:00.000Z');
 	export let muted = false;
 
 	let playbackIds: string[] = [];
